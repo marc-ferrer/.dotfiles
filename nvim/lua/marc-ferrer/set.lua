@@ -15,6 +15,10 @@ vim.opt.backup = false
 
 vim.opt.incsearch = true
 
+-- Case insensitive searching UNLESS /C or capital in search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
