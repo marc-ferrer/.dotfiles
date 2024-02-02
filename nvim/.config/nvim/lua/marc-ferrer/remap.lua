@@ -17,9 +17,11 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Paste without losing register content
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
--- Paste into the system register
+-- Yank into the system register
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 -- Replace current word in the whole file
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
