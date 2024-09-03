@@ -208,7 +208,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 #        status_command i3status
-        status_command ~/.local/bin/bumblebee-status -m nic disk:root cpu \
+        status_command bumblebee-status -m nic disk:root cpu \
                 memory brightness pulseout pulsein battery date time \
                 -p nic.states="^down" memory.format='{percent:05.02f}%' brightness.use_acpi=true brightness.device_path="/sys/class/backlight/amdgpu_bl0" -t solarized-powerline
         tray_output primary
