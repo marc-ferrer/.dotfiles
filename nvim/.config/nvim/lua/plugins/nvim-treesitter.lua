@@ -13,33 +13,33 @@ return {
 				highlight = {
 					enable = true,
 				},
-
 				indent = {
 					enable = true,
 				},
-
 				autotag = {
 					enable = true,
 				},
-
 				ensure_installed = {
 					"json",
 					"javascript",
 					"typescript",
 					"html",
+					"c",
 					"css",
 					"scss",
 					"bash",
 					"lua",
 					"vim",
+					"vimdoc",
 					"dockerfile",
 					"gitignore",
 					"markdown",
 					"go",
 					"rust",
 					"python",
+					"rego",
 				},
-
+				sync_install = false,
 				incremental_selection = {
 					enable = true,
 					keymaps = {
