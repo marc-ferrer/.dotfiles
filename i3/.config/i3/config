@@ -68,6 +68,7 @@ bindsym $mod+Shift+q kill
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id "rofi -modes drun,run,window,filebrowser -show drun -show-icons"
+bindsym $mod+Shift+d exec --no-startup-id "rofi -show power-menu -modi power-menu:rofi-power-menu -theme rose-pine -theme-str 'window {width: 16em; height: 11em;}'"
 
 
 # A more modern dmenu replacement is rofi:
