@@ -154,6 +154,8 @@ return {
 				"lua_ls",
 				"rust_analyzer",
 				"gopls",
+				"ts_ls",
+				"cssls",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -199,7 +201,6 @@ return {
 				["<C-Space>"] = cmp.mapping.complete(),
 			}),
 			sources = cmp.config.sources({
-				{ name = "copilot", group_index = 2 },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- For luasnip users.
 			}, {
@@ -251,16 +252,15 @@ return {
 					require("luasnip").lsp_expand(args.body)
 				end,
 			},
-			sources = {
-				-- Copilot Source
-				-- { name = "copilot", group_index = 2 },
+			sources = cmp.config.sources({
 				-- Other Sources
 				{ name = "nvim_lsp" },
 				{ name = "luasnip", keyword_length = 2 },
-				{ name = "buffer", keyword_length = 3 },
 				{ name = "path" },
 				{ name = "nvim_lua" },
-			},
+			}, {
+				{ name = "buffer", keyword_length = 3 },
+			}),
 			mapping = cmp.mapping.preset.insert({
 				["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 				["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
@@ -301,6 +301,10 @@ return {
 					border = "rounded",
 				},
 			},
+		})
+
+		require("render-markdown").setup({
+			completions = { lsp = { enabled = true } },
 		})
 	end,
 }
