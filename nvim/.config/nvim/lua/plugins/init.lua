@@ -17,19 +17,6 @@ return {
 			{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 		},
 	},
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		dependencies = {
-			{
-				"zbirenbaum/copilot-cmp",
-				config = function()
-					require("copilot_cmp").setup()
-				end,
-			},
-		},
-	},
 	-- Utils
 	{ "folke/todo-comments.nvim" },
 	{
