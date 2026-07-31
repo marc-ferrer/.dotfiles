@@ -1,0 +1,152 @@
+@import "./themes/rose-pine-moon.css";
+@import "colors.css";
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    /* font-family: 'SF Pro Text', 'Inter', 'Segoe UI, NotoSans Nerd Font', sans-serif; */
+    font-family: JetbrainsMono Nerd Font;
+    font-size: 1rem;
+    font-weight: bold;
+    min-height: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    /* font-size: 10px; */
+}
+
+/* Note that the window module applies the additional css classes listed above
+* to the whole waybar rather than the module widgets. The whole waybar is an
+* element with the name "window" and the id "waybar", whereas the window module
+* itself is an element with the name "box" and the id "window". So in most
+* instances, you probably want to apply formatting to window#waybar.<stylename> #window. */
+window#waybar {
+    background-color: transparent;
+    /* margin: 8px 0; */
+    /* background-color: @surface; */
+    border-bottom: 1px solid @overlay;
+    /* color: @foam; */
+    color: @on_background;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar>box {
+    /* min-height: 24px; */
+    /* padding:2px; */
+}
+
+.modules-right > widget > .module {
+    padding: 0 8px;
+    margin: 0 2px;
+}
+
+.modules-right > widget:first-child > .module {
+    border-radius: 4px 0 0 4px;
+}
+.modules-right > widget:last-child > .module {
+    border-radius: 0 4px 4px 0;
+}
+
+.module {
+    /* background-color: @primary; */
+    /* color: @on_primary; */
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+tooltip {
+    /* @overlay color with an alpha component */
+    /* background: rgba(57, 53, 82, 0.6); */
+    background-color: @secondary;
+    border: 1px solid @outline;
+}
+
+tooltip label {
+    /* color: @foam; */
+    color: @on_secondary;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px @highlightHigh;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#workspaces {
+    border-radius: 4px;
+}
+
+#workspaces button {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    padding: 0 4px;
+    /* background-color: transparent; */
+    /* color: @muted; */
+}
+
+#workspaces button.active {
+    background-color: @inverse_surface;
+    color: @inverse_on_surface;
+}
+
+#workspaces button:hover {
+    /* background: rgba(0, 0, 0, 0.2); */
+    background: @tertiary_container;
+    color: @tertiary;
+}
+
+#workspaces button.focused {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+/* #workspaces button.urgent { */
+/*     background-color: #eb4d4b; */
+/* } */
+
+#window {
+    background-color: transparent;
+}
+
+#window > label {
+}
+
+#clock {
+    padding: 0.3rem 0.7rem;
+    /* margin: 5px 0px; */
+    border-radius: 6px;
+    /* box-shadow: 0 1px 3px rgba(153, 209, 219, 0.2); */
+    min-width: 0;
+    border: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#wireplumber.muted {
+    /* background-color: @surface_variant; */
+    /* color: @on_surface_variant; */
+    background-color: @tertiary_container;
+    color: @on_tertiary_container;
+}
+
