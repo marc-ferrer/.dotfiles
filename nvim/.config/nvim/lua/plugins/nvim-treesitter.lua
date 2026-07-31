@@ -26,10 +26,12 @@ return {
 				"gitignore",
 				"markdown",
 				"markdown_inline",
+				"latex",
 				"go",
 				"rust",
 				"python",
 				"rego",
+				"yaml",
 			}
 
 			require("nvim-treesitter").install(ensure_installed)

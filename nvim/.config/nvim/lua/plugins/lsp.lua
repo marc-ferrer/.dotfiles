@@ -20,7 +20,8 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/nvim-cmp",
-		"L3MON4D3/LuaSnip",
+		-- jsregexp enables variable/placeholder transformations in LSP snippets.
+		{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
 		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
 	},
@@ -147,7 +148,19 @@ return {
 			cmp_lsp.default_capabilities()
 		)
 
-		require("fidget").setup({})
+		-- Route vim.notify() through fidget so LSP/plugin messages stack in the
+		-- corner (with `:Fidget history`) instead of overwriting the ui2 cmdline.
+		-- Vimscript `:echomsg` (e.g. fugitive) still goes to the cmdline.
+		require("fidget").setup({
+			notification = {
+				override_vim_notify = true,
+				configs = {
+					default = vim.tbl_extend("force", require("fidget.notification").default_config, {
+						ttl = 10,
+					}),
+				},
+			},
+		})
 		require("mason").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = {
