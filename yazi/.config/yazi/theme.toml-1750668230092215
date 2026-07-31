@@ -2,7 +2,7 @@
 
 # : Manager {{{
 
-[mgr]
+[manager]
 cwd = { fg = "#9ccfd8" }
 
 # Hovered
@@ -138,8 +138,8 @@ rules = [
     { mime = "application/x-rar", fg = "#eb6f92" },
 
     # Fallback
-    { mime = "*", name = "*", fg = "#e0def4" },
-    { mime = "*", name = "*/", fg = "#524f67" },
+    { name = "*", fg = "#e0def4" },
+    { name = "*/", fg = "#524f67" },
 ]
 
 # : }}}

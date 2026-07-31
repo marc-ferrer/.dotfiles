@@ -1,30 +1,20 @@
 include themes/rose-pine.conf
-# include colors.conf to change the color scheme dynamically based on
-# the active wallpaper (matugen)
-# include colors.conf
 # include themes/pink.conf
 confirm_os_window_close 0
 cursor_trail 1
 # This forces the cursor beam shape but causes nvim cursor on insert mode
 # to hide the character behind it.
 # TODO: Add transparency to the beam cursor or try to change it on nvim.
-cursor_shape block
-shell_integration no-cursor
+# cursor_shape beam
 # cursor_beam_thickness 8
 # cursor_stop_blinking_after 0
 cursor_shape_unfocused unchanged
 font_size 11.0
 cursor_blink_interval 0.5
-window_padding_width 8
-# disable_ligatures never
-
-background_opacity 0.8
-
-
-# BEGIN_KITTY_FONTS
-# font_family     family="Jetbrains Mono Nerd Font"
-font_family      family="RobotoMono Nerd Font"
+window_padding_width 5
+font_family     Jetbrains Mono Nerd Font
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
-# END_KITTY_FONTS
+
+# background_opacity 0.8

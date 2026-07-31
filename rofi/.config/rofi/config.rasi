@@ -1,11 +1,17 @@
 configuration {
-  timeout {
-      action: "kb-cancel";
-      delay:  0;
-  }
-  filebrowser {
-      directories-first: true;
-      sorting-method:    "name";
-  }
+    // Add additional modes if necessary
+    modes: [combi];
+    combi-modes: [window,drun,run];
+    run-command: "uwsm app -- {cmd}";
+    show-icons: true;
+    terminal: "kitty";
+    timeout {
+        action: "kb-cancel";
+        delay:  0;
+    }
+    filebrowser {
+        directories-first: true;
+        sorting-method:    "name";
+    }
 }
 @theme "rose-pine-moon"
